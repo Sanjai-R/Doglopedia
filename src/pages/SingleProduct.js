@@ -13,21 +13,30 @@ const SingleProduct = () => {
     return <div>Loading...</div>;
   }
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
-    <Box p={4}>
+    <Box p={4} maxW="600px" mx="auto" bg="white" >
       <Heading as="h1" size="xl" mb={4}>
         {data.title}
       </Heading>
-      <Text fontSize="lg" fontWeight="bold" mb={2}>
-        Price: ${data.price}
-      </Text>
-      <Text fontSize="lg" mb={2}>
-        Category: {data.category}
-      </Text>
-      <Text fontSize="lg" mb={4}>
-        Description: {data.description}
-      </Text>
-      <Image src={data.image} alt={data.title} maxW="400px" mb={4} />
+
+      <Box display="flex" alignItems="center" mb={4}>
+        <Image src={data.image} alt={data.title} boxSize="200px" mr={4} />
+
+        <Box>
+          <Text fontSize="lg" fontWeight="bold" mb={2}>
+            Price: ${data.price}
+          </Text>
+          <Text fontSize="md" fontWeight="medium" mb={2}>
+            Category: {data.category}
+          </Text>
+        </Box>
+      </Box>
+
+      <Text fontSize="md">{data.description}</Text>
     </Box>
   );
 };

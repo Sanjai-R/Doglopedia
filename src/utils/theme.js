@@ -20,7 +20,9 @@ const theme = extendTheme({
     },
   },
   styles: {
-    global: {},
+    global: {
+      bg: "gray.100",
+    },
   },
 });
 export default theme;

@@ -28,10 +28,6 @@ const NavBar = () => {
       title: "Product",
       path: "/product",
     },
-    {
-      title: "Cart",
-      path: "/cart",
-    },
   ];
   useEffect(() => {
     const userData = localStorage.getItem("formData");
