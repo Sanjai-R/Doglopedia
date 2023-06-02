@@ -33,6 +33,7 @@ const LoginContainer = () => {
       description: "We've created your account for you",
       status: "success",
       position: "top-right",
+      isClosable: true,
     });
     localStorage.setItem("formData", JSON.stringify(formData));
     navigate("/home");
