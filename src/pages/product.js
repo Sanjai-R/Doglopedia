@@ -2,12 +2,9 @@ import React from "react";
 import useFetch from "../hooks/useFetch";
 import {
   Button,
-  ButtonGroup,
   Box,
   Center,
   Divider,
-  Grid,
-  GridItem,
   Heading,
   Image,
   Stack,
@@ -26,7 +23,6 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import SearchBar from "../components/SearchBar";
 import { matchSorter } from "match-sorter";
 
 const Product = () => {
