@@ -9,6 +9,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginContainer = () => {
   const [formData, setFormData] = React.useState({
@@ -17,12 +18,12 @@ const LoginContainer = () => {
   });
 
   const toast = useToast();
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-    localStorage.setItem("formData", JSON.stringify(formData));
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +34,8 @@ const LoginContainer = () => {
       status: "success",
       position: "top-right",
     });
-
+    localStorage.setItem("formData", JSON.stringify(formData));
+    navigate("/home");
     setFormData({
       email: "",
       password: "",

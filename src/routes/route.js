@@ -6,5 +6,8 @@ export const router = createBrowserRouter([
     path: "/",
     element: <Auth />,
   },
-  
+  {
+    path: "/home",
+    element: <div>Dashboard</div>,
+  },
 ]);
